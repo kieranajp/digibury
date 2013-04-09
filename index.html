@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.2/css/reveal.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.2/css/theme/serif.css">
+  <style>
+    button {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides"> 
+      <section>
+        <h1>Hello, World</h1>
+        <ul>
+          <li>@kieranajp - Twitter</li>
+          <li>@kajp - App.Net</li>
+        </ul>
+      </section>
+      <section>
+        <img src="img/slide_2.jpg">
+      </section>
+      <section>
+        <blockquote>If you look out, maybe five or ten years, when all five billion people who have feature phones are going to have smart phones, we're soon going to be living in a world where the majority of people who have a smart phone–a modern computing device–will have never seen in their lives what you and I call a “computer.”
+
+So, just think about that for a moment.
+        </blockquote>
+        <cite>— Mark Zuckerberg, last Thursday</cite>
+      </section>
+      <section>
+        <dl>
+          <dt>HCI</dt>
+          <dd>Human-Computer Interaction - Refers to the design and implementation of computer systems that people interact with.</dd>
+      </section>
+      <section>
+        <img src="img/slide_4.jpg">
+      </section>
+      <section>
+        <img src="img/slide_5.png">
+      </section>
+      <section>
+        <img src="img/slide_6.jpg">
+      </section>
+      <section>
+        <img src="img/slide_7.jpg" width="40%">
+        <img src="img/slide_7a.png" width="40%">
+      </section>
+      <section>
+        <img src="img/slide_8.jpg">
+        <img src="img/slide_8a.jpeg">
+      </section>
+      <section>
+        <ul>
+        <li><strong>1873: </strong>Sholes Typewriter. First QWERTY Keyboard!</li>
+        <li><strong>1936: </strong>Z1. First freely-programmable computer.</li>
+        <li><strong>1946: </strong>ENIAC 1 Computer. First computer with a keyboard.</li>
+        <li><strong>1973: </strong>Xerox Alto. First computer with a mouse.</li>
+        <li><strong>?????</strong></li>
+        <li><strong>2006: </strong>Nintendo Wii. Motion controller.</li>
+        <li><strong>2007: </strong>iPhone. Touch input starts to become ubiquitous.</li>
+        </ul>
+      </section>
+      <section>
+        <img src="img/slide_10.jpg">
+      </section>
+      <section>
+        <img width="40%" src="img/slide_11.png">
+      </section>
+      <section>
+        <img src="img/slide_12.jpg">
+      </section>
+      <section>
+        <img src="img/slide_13.jpg">
+      </section>
+      <section>
+        <img width="30%" src="img/slide_14.png">
+        <img width="30%" src="img/slide_14a.jpg">
+        <img width="50%" src="img/slide_14b.jpg">
+      </section>
+      <section>
+        <img width="40%" src="img/slide_15.gif">
+        <img width="40%" src="img/slide_15a.jpg">
+      </section>
+      <section>
+        <h1>HTML5!</h1>
+        <ul>
+          <li>Keybindings</li>
+          <li>Touch events</li>
+          <li>Gamepad API</li>
+          <li>getUserMedia()</li>
+        </ul>
+      </section>
+      <section>
+        <img src="img/slide_16.png">
+      </section>
+      <section>
+        <ul>
+          <li>Stay ahead of the curve</li>
+          <li>Be critical of your own sites</li>
+          <li>Demand more from the web</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Because We Can.</h1>
+      </section>
+      <section>
+        <a href="/">kajp.im/slides</a>
+        <a href="https://github.com/kieranajp">Github</a>
+    </div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/2.2/js/reveal.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.4.0/coffee-script.min.js"></script>
+  <script src="js/webcam-swiper-0.1.js"></script>
+  <script type="text/coffeescript">
+  $ ->
+    Reveal.initialize loop : false
+
+    $('body').append '<button>Start webcam</button>'
+    
+    $('body').on 'webcamSwipeLeft', ->
+      Reveal.right()
+    
+    $('body').on 'webcamSwipeRight', ->
+      Reveal.left()
+    
+    $('button').bind 'click', ->
+      if $(@).text() == 'Stop webcam'
+        window.destroyWebcamSwiper()
+        $(@).text 'Start webcam'
+      else
+        window.initializeWebcamSwiper()
+        $(@).text 'Stop webcam'
+
+    requestAnimationFrame = window.webkitRequestAnimationFrame || window.requestAnimationFrame
+    polling = false
+    
+    run = ->
+      unless polling
+        polling = true
+        pollGamepads()
+        setTimeout ->
+          requestAnimationFrame run
+        , 150
+
+    pollGamepads = ->
+      gamepad = navigator.webkitGetGamepads && navigator.webkitGetGamepads()[0];
+      
+      if gamepad != undefined
+        if gamepad.buttons[5] == 1
+          Reveal.right()
+        if gamepad.buttons[4] == 1
+          Reveal.left()
+    
+      polling = false
+    
+    requestAnimationFrame(run)
+  </script>
+</body>
+</html>
