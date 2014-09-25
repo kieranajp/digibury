@@ -1,5 +1,7 @@
-These are the slides for a talk I am doing at Digibury tomorrow.
-<!--
+These are the slides for a talk at Digibury, Apr 10 2013.
+
+## Script: 
+
 Hello, I’m Kieran, I’m a web developer here in Canterbury, yes this presentation is being controlled with an Xbox controller, and I’m here to sort of ramble on a bit about how we interact with computers.
 
 So hopefully I don’t sound too mad when I say everyone knows what this is right? Almost every computer made in the past few decades has had a keyboard and mouse, it’s really become the de facto way of using a computer. It’s part of the mental image that comes to people’s minds when you mention a PC. And of course that’s not always been the case. And what’s to say it will still be the case in a few years’ time?
@@ -42,4 +44,4 @@ I’m not saying that everyone wants to be able to wave at their webcam today, b
 
 It’s up to us web developers to stay ahead of the curve and be ready to embrace and prepare for change like this. It’s up to people and businesses who own websites and web apps to look critically at how they can improve them for touch input, and to keep looking at what’s next. And its up to web users, particularly those using touchscreens, and early adopters of things like the Leap to demand more from the sites they visit on the web, even if that starts with something small and relatively primitive like keyboard shortcuts.
 
-And if you’re still not convinced then: what’s wrong with doing something cool, simply because you can?-->
+And if you’re still not convinced then: what’s wrong with doing something cool, simply because you can?
